@@ -1,5 +1,5 @@
 {
-  "name": "jest-yoshi-fullstack-preset",
+  "name": "jest-yoshi-preset",
   "version": "3.0.0",
   "description": "jest configuration for a yoshi fullstack project",
   "main": "index.js",
