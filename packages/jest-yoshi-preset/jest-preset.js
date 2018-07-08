@@ -1,6 +1,8 @@
 module.exports = {
-  globalSetup: require.resolve('./globalSetup'),
-  globalTeardown: require.resolve('./globalSetup'),
+  globalSetup: require.resolve('jest-environment-yoshi-puppeteer/globalSetup'),
+  globalTeardown: require.resolve(
+    'jest-environment-yoshi-puppeteer/globalSetup',
+  ),
   transform: {
     '^.+\\.(js)$': require.resolve('babel-jest'),
   },
@@ -16,12 +18,12 @@ module.exports = {
     },
     {
       displayName: 'server',
-      testEnvironment: require.resolve('./jest-environment-bootstrap'),
+      testEnvironment: require.resolve('jest-environment-yoshi-bootstrap'),
       testMatch: ['<rootDir>/test/it/**/*.spec.js'],
     },
     {
       displayName: 'e2e',
-      testEnvironment: require.resolve('./jest-environment-puppeteer'),
+      testEnvironment: require.resolve('jest-environment-yoshi-puppeteer'),
       testMatch: ['<rootDir>/test/e2e/**/*.e2e.js'],
     },
   ],

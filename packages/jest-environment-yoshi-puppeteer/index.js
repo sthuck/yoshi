@@ -2,7 +2,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const puppeteer = require('puppeteer');
-const BootstrapEnvironment = require('./jest-environment-bootstrap');
+const BootstrapEnvironment = require('jest-environment-yoshi-bootstrap');
 
 const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
 

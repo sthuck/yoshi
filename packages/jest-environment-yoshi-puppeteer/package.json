@@ -1,12 +1,12 @@
 {
-  "name": "jest-yoshi-preset",
+  "name": "jest-environment-yoshi-puppeteer",
   "version": "3.0.0",
-  "description": "jest configuration for a yoshi fullstack project",
+  "description": "puppeteer environment for jest",
   "main": "index.js",
   "keywords": [
     "jest",
     "yoshi",
-    "fullstack"
+    "puppeteer"
   ],
   "author": "Ronen Amiel & Ran Yitzhaki",
   "license": "ISC",
@@ -14,12 +14,10 @@
     "customPublish": "node ../../scripts/customPublish.js"
   },
   "dependencies": {
-    "babel-jest": "^23.2.0",
-    "identity-obj-proxy": "^3.0.0",
     "jest-environment-yoshi-bootstrap": "^3.0.0",
-    "jest-environment-yoshi-puppeteer": "^3.0.0"
+    "puppeteer": "^1.5.0",
+    "yoshi": "^3.0.0"
   },
-  "peerDependencies": {},
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   }

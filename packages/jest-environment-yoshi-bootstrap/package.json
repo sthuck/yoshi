@@ -1,12 +1,12 @@
 {
-  "name": "jest-yoshi-preset",
+  "name": "jest-environment-yoshi-bootstrap",
   "version": "3.0.0",
-  "description": "jest configuration for a yoshi fullstack project",
+  "description": "bootstrap environment for jest",
   "main": "index.js",
   "keywords": [
     "jest",
     "yoshi",
-    "fullstack"
+    "bootstrap"
   ],
   "author": "Ronen Amiel & Ran Yitzhaki",
   "license": "ISC",
@@ -14,12 +14,11 @@
     "customPublish": "node ../../scripts/customPublish.js"
   },
   "dependencies": {
-    "babel-jest": "^23.2.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest-environment-yoshi-bootstrap": "^3.0.0",
-    "jest-environment-yoshi-puppeteer": "^3.0.0"
+    "jest-environment-node": "^23.3.0",
+    "wix-bootstrap-testkit": "^1.1.2021",
+    "wix-config-emitter": "^1.0.1030",
+    "wix-rpc-testkit": "^1.0.1210"
   },
-  "peerDependencies": {},
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   }
