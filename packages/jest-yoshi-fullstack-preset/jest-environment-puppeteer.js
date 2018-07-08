@@ -11,23 +11,19 @@ module.exports = class PuppeteerEnvironment extends BootstrapEnvironment {
   async setup() {
     await super.setup();
 
-    try {
-      await cdn({
-        port: 3200,
-        host: '0.0.0.0',
-        ssl: false,
-        publicPath: 'http://localhost:3200/',
-        statics: 'dist/statics',
-        webpackConfigPath: require.resolve(
-          'yoshi/config/webpack.config.client',
-        ),
-        configuredEntry: false,
-        defaultEntry: './client',
-        hmr: false, // 'auto',
-        liveReload: false, // true,
-        transformHMRRuntime: true,
-      });
-    } catch (error) {}
+    await cdn({
+      port: 3200,
+      host: '0.0.0.0',
+      ssl: false,
+      publicPath: 'http://localhost:3200/',
+      statics: 'dist/statics',
+      webpackConfigPath: require.resolve('yoshi/config/webpack.config.client'),
+      configuredEntry: false,
+      defaultEntry: './client',
+      hmr: false, // 'auto',
+      liveReload: false, // true,
+      transformHMRRuntime: true,
+    });
 
     const browserWSEndpoint = fs.readFileSync(
       path.join(DIR, 'wsEndpoint'),

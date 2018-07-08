@@ -1,5 +1,6 @@
 module.exports = {
   globalSetup: require.resolve('./globalSetup'),
+  globalTeardown: require.resolve('./globalSetup'),
   transform: {
     '^.+\\.(js)$': require.resolve('babel-jest'),
   },
