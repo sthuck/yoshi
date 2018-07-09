@@ -1,10 +1,7 @@
-const os = require('os');
-const path = require('path');
 const fs = require('fs-extra');
-
-const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
+const { WS_ENDPOINT_PATH } = require('./constants');
 
 module.exports = async () => {
-  await fs.remove(DIR);
+  await fs.remove(WS_ENDPOINT_PATH);
   await global.BROWSER.close();
 };

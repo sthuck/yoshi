@@ -1,22 +1,20 @@
-const os = require('os');
-const path = require('path');
 const fs = require('fs-extra');
+const path = require('path');
 const puppeteer = require('puppeteer');
 const cdn = require('yoshi/src/tasks/cdn');
-
-const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
+const { WS_ENDPOINT_PATH } = require('./constants');
 
 const config = require(path.join(process.cwd(), 'jest-yoshi.config.js'));
 
 module.exports = async () => {
-  const browser = (global.BROWSER = await puppeteer.launch({
+  global.BROWSER = await puppeteer.launch({
     // defaults
     headless: true,
     args: ['--no-sandbox'],
 
     // user defined options
     ...config.puppeteer,
-  }));
+  });
 
   await cdn({
     port: 3200,
@@ -35,5 +33,5 @@ module.exports = async () => {
   // override webpack plugin that messes with our babel config
   delete process.env.IN_WEBPACK;
 
-  await fs.outputFile(path.join(DIR, 'wsEndpoint'), browser.wsEndpoint());
+  await fs.outputFile(WS_ENDPOINT_PATH, global.BROWSER.wsEndpoint());
 };
