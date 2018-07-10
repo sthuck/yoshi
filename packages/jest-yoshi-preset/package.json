@@ -19,7 +19,6 @@
     "jest-environment-yoshi-bootstrap": "^3.0.0",
     "jest-environment-yoshi-puppeteer": "^3.0.0"
   },
-  "peerDependencies": {},
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   }

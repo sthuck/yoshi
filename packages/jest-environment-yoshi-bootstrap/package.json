@@ -13,8 +13,13 @@
   "scripts": {
     "customPublish": "node ../../scripts/customPublish.js"
   },
-  "dependencies": {
-    "jest-environment-node": "^23.3.0",
+  "peerDependencies": {
+    "wix-bootstrap-testkit": "^1.1.2021",
+    "wix-config-emitter": "^1.0.1030",
+    "wix-rpc-testkit": "^1.0.1210"
+  },
+  "devDependencies": {
+    "jest-environment-node": "^23.0.0",
     "wix-bootstrap-testkit": "^1.1.2021",
     "wix-config-emitter": "^1.0.1030",
     "wix-rpc-testkit": "^1.0.1210"

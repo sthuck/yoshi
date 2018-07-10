@@ -14,8 +14,14 @@
     "customPublish": "node ../../scripts/customPublish.js"
   },
   "dependencies": {
-    "jest-environment-yoshi-bootstrap": "^3.0.0",
-    "puppeteer": "^1.5.0",
+    "jest-environment-yoshi-bootstrap": "^3.0.0"
+  },
+  "peerDependencies": {
+    "puppeteer": "^1.0.0",
+    "yoshi": "^3.0.0"
+  },
+  "devDependencies": {
+    "puppeteer": "^1.0.0",
     "yoshi": "^3.0.0"
   },
   "publishConfig": {
