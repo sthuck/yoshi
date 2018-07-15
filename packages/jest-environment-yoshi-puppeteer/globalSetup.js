@@ -1,5 +1,5 @@
-const fs = require('fs-extra');
 const path = require('path');
+const fs = require('fs-extra');
 const puppeteer = require('puppeteer');
 const cdn = require('yoshi/src/tasks/cdn');
 const { WS_ENDPOINT_PATH } = require('./constants');
