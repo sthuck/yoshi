@@ -4,7 +4,7 @@
 
 ### Introduction
 
-This preset configures Jest with 3 different environments ([learn more](https://jestjs.io/docs/en/configuration#testenvironment-string)). Each environment setups up its own globals and is configured to run for every file that matches a certain glob pattern ([learn more](https://github.com/isaacs/node-glob)).
+This preset configures Jest with 3 different environments ([learn more](https://jestjs.io/docs/en/configuration#testenvironment-string)). Each environment sets up its own globals and is configured to run for every file that matches a certain glob pattern ([learn more](https://github.com/isaacs/node-glob)).
 
 ### Usage
 
@@ -44,9 +44,9 @@ Runs for every test file matching `<rootDir>/test/it/**/*.spec.js`.
 
 An environment that pre-configures [Puppeteer](https://github.com/GoogleChrome/puppeteer) for running your E2E tests.
 
-If creates a global Browser instance ([learn more](https://github.com/GoogleChrome/puppeteer/blob/v1.5.0/docs/api.md#class-browser)) for every test file that's available as `global.browser`.
+It creates a global Browser instance ([learn more](https://github.com/GoogleChrome/puppeteer/blob/v1.5.0/docs/api.md#class-browser)) for every test file that's available as `global.browser`.
 
-Runs for file that match `<rootDir>/test/e2e/**/*.e2e.js`.
+Runs for every file that matches `<rootDir>/test/e2e/**/*.e2e.js`.
 
 ### Configuration
 
