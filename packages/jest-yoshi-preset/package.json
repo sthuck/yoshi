@@ -13,6 +13,9 @@
   "scripts": {
     "customPublish": "node ../../scripts/customPublish.js"
   },
+  "peerDependencies": {
+    "jest": "^23.0.0"
+  },
   "dependencies": {
     "babel-jest": "^23.2.0",
     "identity-obj-proxy": "^3.0.0",

@@ -18,6 +18,7 @@
     "jest-environment-yoshi-bootstrap": "^3.0.0"
   },
   "peerDependencies": {
+    "jest": "^23.0.0",
     "puppeteer": "^1.0.0",
     "yoshi": "^3.0.0"
   },
