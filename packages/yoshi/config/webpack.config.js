@@ -241,6 +241,12 @@ const getStyleLoaders = ({
           options: {
             sourceMap: embedCss,
             includePaths: ['node_modules', 'node_modules/compass-mixins/lib'],
+            importer: require(path.join(
+              __dirname,
+              '..',
+              'src',
+              'sass-magic-importer.js',
+            ))(),
           },
         },
       ],
@@ -478,8 +484,8 @@ function createCommonWebpackConfig({
       inTeamCity || withLocalSourceMaps
         ? 'source-map'
         : !isProduction
-          ? 'cheap-module-eval-source-map'
-          : false,
+        ? 'cheap-module-eval-source-map'
+        : false,
   };
 
   return config;
@@ -608,8 +614,8 @@ function createClientWebpackConfig({
         runtimeMode: 'shared',
         globalRuntimeId: '__stylable_yoshi__',
         generate: {
-          runtimeStylesheetId: 'namespace'
-        }
+          runtimeStylesheetId: 'namespace',
+        },
       }),
 
       // https://github.com/th0r/webpack-bundle-analyzer

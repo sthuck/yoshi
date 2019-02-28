@@ -40,7 +40,7 @@ module.exports = runner.command(
       return;
     }
 
-    const { less, clean, copy, babel, sass, webpack, typescript } = tasks;
+    const { less, clean, copy, babel, webpack, typescript } = tasks;
 
     const migrateScopePackages =
       tasks[require.resolve('../tasks/migrate-to-scoped-packages')];
@@ -48,6 +48,7 @@ module.exports = runner.command(
     const wixMavenStatics = tasks[require.resolve('../tasks/maven-statics')];
     const wixDepCheck = tasks[require.resolve('../tasks/dep-check')];
     const ngAnnotate = tasks[require.resolve('../tasks/ng-annotate')];
+    const sass = tasks[require.resolve('../tasks/sass')];
 
     await Promise.all([
       clean({ pattern: `{dist,target}/*` }),
@@ -195,6 +196,7 @@ module.exports = runner.command(
           target: globs.dist({ esTarget }),
           options: {
             includePaths: ['node_modules', 'node_modules/compass-mixins/lib'],
+            importer: path.join(__dirname, '..', 'sass-magic-importer.js'),
           },
         }),
       );
@@ -246,7 +248,9 @@ module.exports = runner.command(
             project: 'tsconfig.json',
             rootDir: '.',
             outDir: globs.dist({ esTarget }),
-            ...(esTarget ? { module: experimentalTSTarget ? 'esNext' : 'es2015' } : {}),
+            ...(esTarget
+              ? { module: experimentalTSTarget ? 'esNext' : 'es2015' }
+              : {}),
           }),
         );
         if (esTarget) {

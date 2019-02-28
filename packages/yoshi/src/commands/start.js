@@ -51,7 +51,7 @@ const entryPoint = addJsSuffix(cliArgs['entry-point'] || 'index.js');
 
 module.exports = runner.command(
   async tasks => {
-    const { sass, less, copy, clean, babel, typescript } = tasks;
+    const { less, copy, clean, babel, typescript } = tasks;
 
     const wixAppServer = tasks[require.resolve('../tasks/app-server')];
     const wixCdn = tasks[require.resolve('../tasks/cdn')];
@@ -59,6 +59,7 @@ module.exports = runner.command(
       tasks[require.resolve('../tasks/migrate-to-scoped-packages')];
     const wixPetriSpecs = tasks[require.resolve('../tasks/petri-specs')];
     const wixMavenStatics = tasks[require.resolve('../tasks/maven-statics')];
+    const sass = tasks[require.resolve('../tasks/sass')];
 
     const appServer = async () => {
       if (cliArgs.server === false) {
@@ -201,6 +202,7 @@ module.exports = runner.command(
             target: 'dist',
             options: {
               includePaths: ['node_modules', 'node_modules/compass-mixins/lib'],
+              importer: path.join(__dirname, '..', 'sass-magic-importer.js'),
             },
           }),
         );

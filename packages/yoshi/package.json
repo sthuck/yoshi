@@ -1,6 +1,7 @@
 {
-  "name": "yoshi",
+  "name": "f_yoshi",
   "version": "3.30.5",
+  "description": "forked yoshi, tiny changes",
   "main": "./src/index.js",
   "bin": {
     "yoshi": "./bin/yoshi.js"
@@ -91,6 +92,7 @@
     "mocha": "^3.4.2",
     "mocha-teamcity-reporter": "^2",
     "mock-require": "^2.0.0",
+    "node-sass-magic-importer": "^5.3.0",
     "nyc": "^12.0.1",
     "os-name": "^2.0.1",
     "petri-specs": "~1.2.0",
