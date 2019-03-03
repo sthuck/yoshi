@@ -229,6 +229,7 @@ module.exports = runner.command(
                   'node_modules',
                   'node_modules/compass-mixins/lib',
                 ],
+                importer: path.join(__dirname, '..', 'sass-magic-importer.js'),
               },
             }),
         !shouldRunLess()
